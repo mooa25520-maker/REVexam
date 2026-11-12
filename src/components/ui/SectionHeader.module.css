@@ -1,0 +1,43 @@
+/* ============================================================
+   SectionHeader styles
+   ============================================================ */
+.wrapper {
+  margin-bottom: var(--space-2xl);
+}
+
+.centered {
+  text-align: center;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-body-bold);
+  color: var(--color-magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading-bold);
+  font-size: var(--fs-3xl);
+  color: var(--color-ink);
+  line-height: var(--lh-tight);
+}
+
+.light .label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.light .heading {
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: var(--fs-2xl);
+  }
+}

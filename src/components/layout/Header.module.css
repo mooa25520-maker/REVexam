@@ -1,0 +1,319 @@
+/* ============================================================
+   Header styles
+   - Sticky, transparent until scrolled
+   - Burger menu under 1020px
+   ============================================================ */
+
+/* ── Header shell ─────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: transparent;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-lg);
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.logoImg {
+  height: 36px;
+  width: auto;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading-extra);
+  font-size: var(--fs-xl);
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+.logoAccent {
+  color: var(--color-magenta);
+}
+
+/* ── Desktop navigation ───────────────────────────────────── */
+.desktopNav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-body-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  padding: var(--space-xs) 0;
+  transition: color var(--transition-fast);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-magenta);
+  transition: width var(--transition-base);
+}
+
+.navLink:hover {
+  color: var(--color-magenta);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ── Desktop actions (lang + CTA) ─────────────────────────── */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-shrink: 0;
+}
+
+/* ── Burger button ────────────────────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-ink);
+  border-radius: 2px;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-fast);
+  transform-origin: center;
+}
+
+/* Burger → X animation */
+.burgerOpen .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Overlay ──────────────────────────────────────────────── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(13, 21, 48, 0.4);
+  z-index: 999;
+}
+
+/* ── Mobile menu ──────────────────────────────────────────── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 85vw;
+  background-color: var(--color-white);
+  padding: calc(var(--header-height) + var(--space-xl)) var(--space-xl)
+    var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+  overflow-y: auto;
+}
+
+.mobileOpen {
+  transform: translateX(0);
+}
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  list-style: none;
+  margin-bottom: var(--space-xl);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-body-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.mobileLink:hover {
+  background-color: var(--color-bg);
+  color: var(--color-magenta);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-line);
+}
+
+/* ── Responsive: show burger, hide desktop nav under 1020px ── */
+@media (max-width: 1020px) {
+  .desktopNav,
+  .desktopActions {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+  }
+}
+/* Transparent header over dark hero */
+.logoText {
+  color: #fff;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.burgerLine {
+  background-color: #fff;
+}
+
+/* Scrolled header */
+.header.scrolled .logoText {
+  color: #fff;
+}
+
+.header.scrolled .navLink {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.header.scrolled .burgerLine {
+  background-color: #fff;
+}
+
+/* ── Scroll Progress Bar ───────────────────────── */
+
+.progressTrack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1100;
+  background: transparent;
+  pointer-events: none;
+}
+
+.progressBar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #d6177f,
+    #ed3b9b
+  );
+  transform-origin: left center;
+  transition: transform 80ms linear;
+}
+
+/* ── Header Behavior ───────────────────────────── */
+
+.header {
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease,
+    backdrop-filter 300ms ease;
+}
+
+.visible {
+  transform: translateY(0);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* Dark glass header while scrolling */
+
+.header.scrolled {
+  background: rgba(11, 16, 32, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Keep mobile menu usable */
+
+.menuActive {
+  transform: translateY(0);
+}

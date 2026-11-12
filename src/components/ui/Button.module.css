@@ -1,0 +1,82 @@
+/* ============================================================
+   Button styles
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.7rem 1.6rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-body-bold);
+  line-height: 1;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* ── Primary (magenta filled) ─────────────────── */
+.primary {
+  background-color: var(--color-magenta);
+  color: var(--color-white);
+  border-color: var(--color-magenta);
+}
+
+.primary:hover {
+  background-color: var(--color-magenta-dark);
+  border-color: var(--color-magenta-dark);
+}
+
+/* ── Outline ──────────────────────────────────── */
+.outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-line);
+}
+
+.outline:hover {
+  border-color: var(--color-magenta);
+  color: var(--color-magenta);
+}
+
+/* ── Ghost (text-only) ────────────────────────── */
+.ghost {
+  background-color: transparent;
+  color: var(--color-magenta);
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+}
+
+.ghost:hover {
+  color: var(--color-magenta-dark);
+}
+
+/* ── Disabled ─────────────────────────────────── */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Outline Light (white border, for dark backgrounds) ───── */
+.outlineLight {
+  background-color: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.outlineLight:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}

@@ -1,0 +1,67 @@
+/* ============================================================
+   CallToAction styles
+   ============================================================ */
+.section {
+  background: linear-gradient(
+    135deg,
+    var(--color-ink) 0%,
+    var(--color-ink2) 100%
+  );
+  padding: var(--space-5xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(214, 23, 127, 0.12) 0%,
+    transparent 60%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading-extra);
+  font-size: var(--fs-3xl);
+  color: var(--color-white);
+  line-height: var(--lh-tight);
+}
+
+.subheading {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 500px;
+  line-height: var(--lh-normal);
+}
+
+.btn {
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: var(--fs-2xl);
+  }
+}

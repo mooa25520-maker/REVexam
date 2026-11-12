@@ -1,0 +1,610 @@
+/* ============================================================
+   Hero.module.css — pixel-perfect match to reference
+   Deep navy, perspective dashboard, floating phone & cards
+   ============================================================ */
+
+/* ── Shell ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b1020;
+  color: #fff;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 80px;
+}
+
+/* ── Background glow ──────────────────────────────────────── */
+.bgGlow {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  width: 70%;
+  height: 110%;
+  background: radial-gradient(
+    ellipse at 60% 40%,
+    rgba(120, 40, 140, 0.18) 0%,
+    rgba(80, 20, 100, 0.08) 35%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* ── Layout ───────────────────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LEFT — Text
+   ══════════════════════════════════════════════════════════════ */
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  background: var(--color-magenta);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 22px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0 0 24px;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 46ch;
+  margin: 0 0 40px;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s ease 0.3s both;
+}
+
+/* CTA overrides for hero context */
+.ctaPrimary {
+  border-radius: 999px !important;
+  padding: 14px 28px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  gap: 8px !important;
+}
+
+.ctaSecondary {
+  border-radius: 999px !important;
+  padding: 14px 28px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RIGHT — Product Showcase
+   ══════════════════════════════════════════════════════════════ */
+.showcase {
+  position: relative;
+  min-height: 480px;
+  animation: fadeUp 0.8s ease 0.15s both;
+}
+
+/* ── Desktop dashboard ────────────────────────────────────── */
+.desktopWrap {
+  transform: perspective(1800px) rotateY(-8deg) rotateX(2deg);
+  transform-style: preserve-3d;
+  animation: floatDesktop 7s ease-in-out infinite;
+}
+
+.desktop {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #101829;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 40px 100px -20px rgba(0, 0, 0, 0.7),
+    0 0 80px -20px rgba(120, 40, 140, 0.15);
+}
+
+/* Sidebar */
+.sidebar {
+  background: #0c1322;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sidebarLogoIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--color-magenta), #9f1065);
+  flex-shrink: 0;
+}
+.sidebarLogoText {
+  font: 700 0.68rem var(--font-heading);
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font: 500 0.65rem var(--font-body);
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.2s;
+}
+.sidebarItemActive {
+  background: rgba(214, 23, 127, 0.12);
+  color: var(--color-magenta);
+}
+.sidebarDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Main content */
+.main {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainTitle {
+  font: 700 0.85rem var(--font-heading);
+  color: rgba(255, 255, 255, 0.88);
+}
+.mainHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.searchBox {
+  width: 80px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+/* Stat cards */
+.statCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+}
+.statIconWrap {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.statLabel {
+  font: 400 0.52rem var(--font-body);
+  color: rgba(255, 255, 255, 0.4);
+}
+.statValue {
+  font: 700 0.9rem var(--font-heading);
+  color: #fff;
+}
+
+/* Chart */
+.chartArea {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px 10px 0;
+  overflow: hidden;
+}
+.chartSvg {
+  display: block;
+  width: 100%;
+  height: 52px;
+}
+
+/* Activity row */
+.activityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 2px;
+}
+.activityTitle {
+  font: 600 0.65rem var(--font-heading);
+  color: rgba(255, 255, 255, 0.55);
+}
+.donutWrap {
+  flex-shrink: 0;
+}
+
+/* ── Mobile phone mockup ──────────────────────────────────── */
+.phone {
+  position: absolute;
+  bottom: -10px;
+  left: 40px;
+  width: 130px;
+  background: #101829;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 24px 60px -10px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  overflow: hidden;
+  animation: floatMobile 6s ease-in-out 0.6s infinite;
+}
+.phoneNotch {
+  width: 50%;
+  height: 12px;
+  margin: 0 auto;
+  background: #0b1020;
+  border-radius: 0 0 10px 10px;
+}
+.phoneContent {
+  padding: 10px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.phoneGreeting {
+  font: 700 0.72rem var(--font-heading);
+  color: #fff;
+  padding: 2px 0;
+}
+.phoneCard {
+  background: linear-gradient(135deg, var(--color-magenta), #e84ba5);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.phoneCardLabel {
+  font: 500 0.5rem var(--font-body);
+  color: rgba(255, 255, 255, 0.8);
+}
+.phoneCardChart {
+  height: 20px;
+  width: 100%;
+}
+.phoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+.phoneListItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.phoneListDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+.phoneListBar {
+  height: 5px;
+  width: 85%;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Floating notification card ───────────────────────────── */
+.notifCard {
+  position: absolute;
+  top: 12px;
+  right: -16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #151f34;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.55);
+  z-index: 3;
+  animation: floatNotif 6s ease-in-out 1s infinite;
+}
+.notifIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-magenta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.notifText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.notifTitle {
+  font: 600 0.68rem var(--font-heading);
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+.notifTime {
+  font: 400 0.55rem var(--font-body);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Floating performance card ────────────────────────────── */
+.perfCard {
+  position: absolute;
+  bottom: 30px;
+  right: -10px;
+  background: #151f34;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.55);
+  z-index: 3;
+  animation: floatPerf 5.5s ease-in-out 1.4s infinite;
+}
+.perfTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.perfValue {
+  font: 800 1.1rem var(--font-heading);
+  color: var(--color-magenta);
+}
+.perfLabel {
+  font: 400 0.58rem var(--font-body);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Animations
+   ══════════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatDesktop {
+  0%,
+  100% {
+    transform: perspective(1800px) rotateY(-8deg) rotateX(2deg) translateY(0);
+  }
+  50% {
+    transform: perspective(1800px) rotateY(-8deg) rotateX(2deg) translateY(-8px);
+  }
+}
+
+@keyframes floatMobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatNotif {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes floatPerf {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1020px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subtitle {
+    max-width: 100%;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .showcase {
+    max-width: 560px;
+    margin: 0 auto;
+    min-height: 380px;
+  }
+  .desktopWrap {
+    transform: perspective(1800px) rotateY(-4deg) rotateX(1deg);
+  }
+  .notifCard {
+    right: -8px;
+  }
+  .perfCard {
+    right: -4px;
+  }
+  .phone {
+    left: 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding: 110px 0 80px;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .desktop {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+  .statCards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .notifCard {
+    display: none;
+  }
+  .perfCard {
+    display: none;
+  }
+  .phone {
+    width: 100px;
+    left: 8px;
+    bottom: -8px;
+  }
+  .desktopWrap {
+    transform: perspective(1800px) rotateY(0) rotateX(0);
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .bgGlow,
+  .desktopWrap,
+  .phone,
+  .notifCard,
+  .perfCard,
+  .badge,
+  .title,
+  .subtitle,
+  .actions,
+  .showcase {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .desktopWrap {
+    transform: perspective(1800px) rotateY(-8deg) rotateX(2deg) !important;
+  }
+}
+.mockupImage {
+  width: 100%;
+  max-width: 750px; 
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+  animation: float 6s ease-in-out infinite; 
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

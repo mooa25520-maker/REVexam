@@ -1,0 +1,57 @@
+/* ============================================================
+   LanguageSwitcher styles
+   ============================================================ */
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btn {
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-body-medium);
+  color: var(--color-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+  line-height: 1;
+}
+
+.btn:hover {
+  color: var(--color-magenta);
+}
+
+.btn.active {
+  color: var(--color-magenta);
+  font-weight: var(--fw-body-bold);
+}
+
+.divider {
+  color: var(--color-line);
+  font-size: var(--fs-sm);
+  user-select: none;
+}
+
+/* Footer variant — lighter text on dark bg */
+.footer .btn {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer .btn:hover {
+  color: var(--color-white);
+}
+
+.footer .btn.active {
+  color: var(--color-white);
+}
+
+.footer .divider {
+  color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,70 @@
+/* ============================================================
+   WhyUs styles
+   ============================================================ */
+.section {
+  padding: var(--space-5xl) 0;
+  background-color: var(--color-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.card {
+  position: relative;
+  padding: var(--space-xl);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-magenta);
+  transform: translateY(-3px);
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading-extra);
+  font-size: var(--fs-3xl);
+  color: rgba(214, 23, 127, 0.08);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.iconWrap {
+  color: var(--color-magenta);
+  margin-bottom: var(--space-md);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-heading-bold);
+  font-size: var(--fs-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-sm);
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

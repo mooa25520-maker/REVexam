@@ -1,0 +1,184 @@
+{
+  "header": {
+    "nav": {
+      "home": "Accueil",
+      "services": "Services",
+      "expertise": "Expertise",
+      "projects": "Projets",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "cta": "Demander un devis",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu"
+  },
+  "hero": {
+    "title": "Des solutions digitales pensées pour votre entreprise.",
+    "subtitle": "Nous concevons et développons des solutions digitales sur mesure qui transforment vos idées en outils concrets pour votre activité. De la conception au lancement, nous avançons à vos côtés à chaque étape.",
+    "cta1": "Parlons de votre projet",
+    "cta2": "Découvrir nos services",
+    "tagline": "SOLUTIONS INFORMATIQUES SUR MESURE"
+  },
+  "about": {
+    "title": "À propos",
+    "heading": "Un partenaire, plus qu'un prestataire",
+    "text1": "Digital Bang est une société d'ingénierie informatique basée à Casablanca, spécialisée dans le développement de solutions sur mesure. Nous accompagnons les PME et les grandes entreprises dans la digitalisation de leurs processus métier.",
+    "text2": "Notre approche repose sur l'écoute, la transparence et l'exigence technique. Chaque projet est mené en collaboration étroite avec nos clients pour garantir un résultat aligné sur leurs objectifs."
+  },
+  "services": {
+    "title": "Services",
+    "heading": "Ce que nous faisons",
+    "items": {
+      "dev": {
+        "title": "Développement sur mesure",
+        "description": "Conception et réalisation d'applications web, mobiles et desktop adaptées à vos processus métier. Nous couvrons l'ensemble du cycle de développement, de l'analyse des besoins au déploiement en production."
+      },
+      "it": {
+        "title": "Services IT (infogérance)",
+        "description": "Prise en charge complète ou partielle de votre infrastructure informatique : maintenance, supervision, support utilisateurs et gestion des incidents pour garantir la continuité de vos opérations."
+      },
+      "backup": {
+        "title": "Solutions de sauvegarde",
+        "description": "Mise en place de stratégies de sauvegarde fiables et automatisées pour protéger vos données critiques. Solutions locales, cloud ou hybrides adaptées à la taille de votre entreprise."
+      }
+    },
+    "chips": {
+      "web": "Web",
+      "mobile": "Mobile",
+      "desktop": "Desktop",
+      "website": "Site vitrine & e-commerce",
+      "ux": "UX/UI",
+      "audit": "Audit de code"
+    }
+  },
+  "expertise": {
+    "title": "Expertise",
+    "heading": "Notre stack technique",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "items": "[À compléter]"
+      },
+      "backend": {
+        "title": "Backend",
+        "items": "[À compléter]"
+      },
+      "mobile": {
+        "title": "Mobile",
+        "items": "[À compléter]"
+      },
+      "database": {
+        "title": "Bases de données & Cloud",
+        "items": "[À compléter]"
+      },
+      "uiux": {
+        "title": "UI/UX",
+        "items": "[À compléter]"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "heading": "Nos réalisations",
+    "imageAlt": "Capture à fournir",
+    "viewProject": "Voir le projet"
+  },
+  "whyUs": {
+    "title": "Pourquoi nous choisir",
+    "items": {
+      "skills": {
+        "title": "Compétences professionnelles",
+        "description": "Une équipe d'ingénieurs expérimentés, formés aux dernières technologies et méthodologies de développement."
+      },
+      "approach": {
+        "title": "Approche unique",
+        "description": "Un processus collaboratif où chaque décision est prise avec vous, pas à votre place."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Communication claire à chaque étape, visibilité sur l'avancement et les coûts, sans surprises."
+      },
+      "reactivity": {
+        "title": "Réactivité",
+        "description": "Des délais de réponse courts et une capacité d'adaptation rapide aux changements de priorité."
+      }
+    }
+  },
+  "process": {
+    "title": "Notre processus",
+    "heading": "Comment nous travaillons",
+    "steps": {
+      "planning": "Planification",
+      "architecture": "Architecture",
+      "design": "UI/UX Design",
+      "development": "Développement",
+      "testing": "Tests",
+      "launch": "Lancement"
+    }
+  },
+  "cta": {
+    "heading": "Un projet en tête ?",
+    "subheading": "Discutons de votre idée et transformons-la en solution concrète.",
+    "button": "Demander un devis"
+  },
+  "contact": {
+    "title": "Contact",
+    "heading": "Contactez-nous",
+    "form": {
+      "name": "Nom",
+      "company": "Société",
+      "role": "Fonction",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "subject": "Objet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "required": "obligatoire"
+    },
+    "validation": {
+      "nameRequired": "Le nom est requis.",
+      "nameMin": "Le nom doit contenir au moins 2 caractères.",
+      "emailRequired": "L'adresse e-mail est requise.",
+      "emailInvalid": "Veuillez entrer une adresse e-mail valide.",
+      "messageRequired": "Le message est requis.",
+      "messageMin": "Le message doit contenir au moins 10 caractères."
+    },
+    "success": "Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.",
+    "error": "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter directement par e-mail.",
+    "info": {
+      "addressTitle": "Adresse",
+      "address": "Abdelmoumen Center, angle bd Abdelmoumen & Anoual, ETG 2, bureau 202, BP 20 042, Casablanca, Maroc",
+      "emailTitle": "E-mail",
+      "email": "contact@digitalbang.ma",
+      "phoneTitle": "Téléphone",
+      "phone": "+212 6 64 55 07 16",
+      "socialTitle": "Réseaux sociaux"
+    }
+  },
+  "footer": {
+    "description": "Digital Bang est une société d'ingénierie informatique basée à Casablanca, spécialisée dans le développement de solutions sur mesure.",
+    "navTitle": "Navigation",
+    "servicesTitle": "Services",
+    "socialTitle": "Suivez-nous",
+    "copyright": "© {{year}} Digital Bang. Tous droits réservés.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "x": "X"
+    }
+  },
+  "backToTop": "Retour en haut",
+  "languageSwitcher": {
+    "fr": "FR",
+    "en": "EN",
+    "label": "Changer de langue"
+  },
+  "seo": {
+    "title": "Digital Bang — Développement sur mesure à Casablanca",
+    "description": "Digital Bang, société d'ingénierie informatique à Casablanca. Développement d'applications web, mobiles et desktop sur mesure, services IT et solutions de sauvegarde.",
+    "ogTitle": "Digital Bang — Développement sur mesure à Casablanca",
+    "ogDescription": "Nous concevons et développons des solutions logicielles sur mesure pour les entreprises. Basés à Casablanca, Maroc."
+  }
+}

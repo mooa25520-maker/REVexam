@@ -1,0 +1,4 @@
+# Digital Bang — robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://digitalbang.ma/sitemap.xml
