@@ -186,7 +186,7 @@ export default function ResultScreen({
       {/* قسم المراجعة التفصيلية للإجابات */}
       <div className="review-section">
         <div className="review-header">
-          <h2 className="review-title">مراجعة الأسئلة والإجابات النموذجية</h2>
+          <h2 className="review-title">مراجعة الأسئلة والإجابات المختارة</h2>
 
           <div className="review-filters">
             <button
@@ -202,13 +202,6 @@ export default function ResultScreen({
               onClick={() => setFilterMode("wrong")}
             >
               الخاطئة فقط ({wrongCount + unansweredCount})
-            </button>
-            <button
-              type="button"
-              className={`filter-btn ${filterMode === "correct" ? "active" : ""}`}
-              onClick={() => setFilterMode("correct")}
-            >
-              الصحيحة فقط ({correctCount})
             </button>
           </div>
         </div>
@@ -239,7 +232,7 @@ export default function ResultScreen({
                     const isUserChoice = optIdx === q.userAnswer;
 
                     let optClass = "review-option";
-                    if (isCorrectChoice) optClass += " correct-answer";
+                    if (isUserChoice && isCorrectChoice) optClass += " correct-answer";
                     else if (isUserChoice && !isCorrectChoice) optClass += " user-wrong-answer";
 
                     return (
@@ -249,21 +242,13 @@ export default function ResultScreen({
                           <span>{opt}</span>
                         </div>
                         <div>
-                          {isCorrectChoice && <span>(الإجابة الصحيحة ✓)</span>}
-                          {isUserChoice && !isCorrectChoice && <span>(إجابتك التي اخترتها ✗)</span>}
                           {isUserChoice && isCorrectChoice && <span>(إجابتك الصحيحة ✓)</span>}
+                          {isUserChoice && !isCorrectChoice && <span>(إجابتك المختارة ✗)</span>}
                         </div>
                       </div>
                     );
                   })}
                 </div>
-
-                {q.explanation && (
-                  <div className="review-explanation">
-                    <strong>💡 التوضيح والشرح: </strong>
-                    <span>{q.explanation}</span>
-                  </div>
-                )}
               </div>
             );
           })}

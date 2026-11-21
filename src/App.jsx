@@ -91,7 +91,6 @@ export default function App() {
   const handleNext = () => {
     if (currentQuestionIndex < sampleQuestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -99,14 +98,12 @@ export default function App() {
   const handlePrev = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prev) => prev - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   // الانتقال المباشر لسؤال بالرقم
   const handleSelectQuestion = (index) => {
     setCurrentQuestionIndex(index);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // فتح نافذة تأكيد التسليم
