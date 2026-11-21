@@ -110,7 +110,7 @@ export default function QuestionCard({
             onClick={onNext}
           >
             <span>←</span>
-            <span>السؤال التالي</span>
+            <span>التالي</span>
           </button>
         )}
       </div>

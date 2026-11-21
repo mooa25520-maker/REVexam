@@ -14,6 +14,26 @@
     <title>منصة الامتحان الإلكتروني | Online Exam</title>
   </head>
   <body>
+    <noscript>
+      <style>
+        body { margin: 0; direction: rtl; font-family: "Cairo", Tahoma, Arial, sans-serif; background: #f1f5f9; }
+        #root { display: none; }
+        .js-disabled-modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; background: rgba(15, 23, 42, 0.72); backdrop-filter: blur(6px); }
+        .js-disabled-dialog { width: min(440px, 100%); box-sizing: border-box; text-align: center; background: #fff; color: #0f172a; border: 1px solid #e2e8f0; border-radius: 20px; padding: 28px 22px; box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25); }
+        .js-disabled-icon { width: 72px; height: 72px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fef2f2; border: 1px solid #fecaca; font-size: 38px; }
+        .js-disabled-dialog h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.4; }
+        .js-disabled-dialog p { margin: 0; color: #64748b; font-size: 16px; line-height: 1.8; }
+        .js-disabled-note { margin-top: 18px !important; padding: 12px; border-radius: 12px; background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412 !important; font-weight: 700; }
+      </style>
+      <div class="js-disabled-modal" role="dialog" aria-modal="true" aria-labelledby="js-disabled-title">
+        <div class="js-disabled-dialog">
+          <div class="js-disabled-icon" aria-hidden="true">⚠️</div>
+          <h1 id="js-disabled-title">يجب تفعيل JavaScript</h1>
+          <p>لا يمكن تشغيل الامتحان الإلكتروني في متصفحك حاليًا لأن JavaScript معطل.</p>
+          <p class="js-disabled-note">افتح إعدادات المتصفح، فعّل JavaScript، ثم أعد تحميل الصفحة.</p>
+        </div>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
